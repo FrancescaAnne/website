@@ -1,0 +1,862 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Urbanist", sans-serif;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+    color: #000000;
+}
+
+header {
+    /* Il colore rgb(255,255,255) è il bianco. Lo 0.85 finale indica l'85% di opacità (visibilità) */
+    background-color: rgba(255, 255, 255, 0.75); 
+    
+    /* Effetto "Glassmorphism" (vetro sfocato) sulle immagini che scorrono sotto */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* Regola per farlo funzionare bene anche su Safari/Mac */
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 40px;
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px; /* <--- CAMBIA QUESTO VALORE per avvicinarli o allontanarli */
+    align-items: center;
+    font-weight: bold;
+}
+    
+.frame1 {
+    display: flex;          /* Allinea immagine e testo sulla stessa riga */
+    align-items: center; /* Allinea il testo alla parte superiore della foto */
+    gap: 40px;              /* Spazio generoso tra foto e testo */
+    width: 100%;            /* Il contenitore occupa tutta la larghezza */
+    max-width: 1000px;      /* Opzionale: evita che diventi troppo largo su monitor grandi */
+    margin: 30px auto;      /* Centra tutto il blocco nella pagina */
+}
+
+.portrait {
+    width: 300px;           /* Dimensione della foto */
+    height: 300px;          /* Deve essere uguale alla width */
+    border-radius: 50%;     /* La rende perfettamente tonda */
+    object-fit: cover;      /* Ritaglia bene il viso */
+    flex-shrink: 0;         /* IMPEDISCE al testo di schiacciare la foto */
+    box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+}
+
+.frame1 p {
+    flex: 1;                /* Il testo "mangia" tutto lo spazio che rimane sulla riga */
+    text-align: justify;    /* Giustifica il testo per un look pulito */
+    line-height: 1.7;       /* Rende la lettura più riposante */
+    margin: 0;              /* Rimuove margini extra che potrebbero sfasare l'allineamento */
+    font-size: 1.1rem;
+}
+
+.mainhome {
+    color: #000000;
+    display: flex;
+    width: 80%;
+    margin: 10%;
+    align-items: flex-start;
+}
+
+header a {
+    text-decoration: none;
+    color: #000000;             /* Un grigio molto scuro, meno aggressivo del nero */
+    transition: all 0.3s ease; /* Rende il cambio di colore fluido */
+    font-size: 1.4rem; /* Regola la grandezza dei link se serve */
+}
+
+header a:hover {          
+/* Cambia in un blu delicato o il tuo colore preferito */
+    opacity: 0.7;
+}
+
+.mainresume {
+    display: flex;
+    justify-content: center;
+}
+
+.cv {
+    width: 70%;
+}
+
+footer {
+    background-color: #1a1a1a; /* Grigio antracite scurissimo, quasi nero */
+    color: #FFFFFF; /* Testo bianco per un contrasto netto */
+    padding: 40px 20px; /* Aumentato un po' lo spazio per renderlo più arioso */
+}
+
+/* (Il tuo footer p rimane uguale, quindi lascialo com'è) */
+
+footer a {
+    color: #FFFFFF; /* Anche i link diventano bianchi */
+    text-decoration: underline; /* Sottolineiamo i link per far capire che sono cliccabili */
+    transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.7; /* Quando ci passi sopra si sbiadiscono leggermente, molto elegante */
+}
+
+footer p {
+    margin: 1;
+    padding-top: 10px; /* Un po' di respiro prima del copyright */
+}
+
+.main-projects {
+    padding: 50px 10%;
+    background-color: #FFFFFF;
+}
+
+.projects-grid {
+    display: grid;
+    /* Crea 3 colonne uguali */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 70px; /* Spazio tra i blocchi */
+}
+
+/* --- NUOVO STILE SCHEDE PROGETTO --- */
+
+/* Contenitore principale della scheda */
+.project-card {
+    position: relative; /* Fondamentale per far funzionare il posizionamento assoluto all'interno */
+    overflow: hidden; /* Taglia l'immagine in eccesso se sborda durante lo zoom */
+    aspect-ratio: 1 / 1; /* Rende la scheda un quadrato perfetto */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Mantiene una leggera ombra sotto al riquadro */
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+/* Effetto al passaggio del mouse sull'intera scheda */
+.project-card:hover {
+    transform: translateY(-5px); /* Solleva il blocco intero */
+}
+
+/* Effetto zoom sull'immagine al passaggio del mouse */
+.project-card:hover img {
+    transform: scale(1.10); /* Ingrandisce l'immagine del 5% */
+}
+
+/* L'immagine che riempie tutto lo spazio */
+.project-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Taglia l'immagine senza deformarla */
+    z-index: 0;
+    transition: transform 0.5s ease; /* Rende lo zoom fluido */
+}
+
+/* Il gradiente scuro in alto (fondamentale per leggere il testo bianco) */
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; /* L'ombra copre solo il 40% superiore della foto */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none; /* Evita che il gradiente blocchi eventuali click del mouse */
+}
+
+/* Il testo sovrapposto */
+.project-card h2 {
+    position: absolute;
+    top: 30px; /* Distanza dal bordo superiore */
+    left: 0;
+    width: 100%;
+    text-align: center; /* Centra il testo orizzontalmente */
+    color: #FFFFFF;
+    font-family: "Urbanist", sans-serif; /* Assicuriamoci che usi il tuo font */
+    font-size: 1.8rem;
+    margin: 0;
+    z-index: 2; /* Assicura che il testo sia SOPRA l'immagine e SOPRA il gradiente */
+    pointer-events: none; /* Assicura che il cursore riconosca l'immagine sotto */
+}
+
+.contatti {
+    line-height: 1.5; /* Aumenta lo spazio tra la mail e LinkedIn. Puoi provare anche 1.8 o 2.2 */
+}
+
+/* --- STILE PAGINA SINGOLO PROGETTO (LAYOUT EDITORIALE) --- */
+
+.project-detail {
+    width: 80%;
+    max-width: 1500px; /* Leggermente più largo per far respirare le due colonne */
+    margin: 60px auto;
+    color: #000000;
+}
+
+/* Layout a due colonne per testo e titoli */
+.project-info {
+    display: flex;
+    gap: 100px; /* Spazio generoso tra la colonna sinistra e destra */
+    margin-bottom: 60px; /* Spazio prima di iniziare con le immagini */
+    align-items: flex-start; /* Allinea tutto in alto */
+}
+
+/* Colonna di sinistra (Titoli) */
+.project-headers {
+    flex: 1; /* Occupa 1 porzione di spazio */
+    min-width: 250px; /* Evita che il titolo si schiacci troppo sui piccoli schermi */
+}
+
+.project-headers h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 0 0 10px 0; /* Spazio solo sotto il titolo */
+    line-height: 1.1;
+}
+
+.project-headers .subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #888888; /* Un grigio neutro ed elegante */
+    margin: 0;
+}
+
+/* Colonna di destra (Testo descrittivo) */
+.project-description {
+    flex: 2; /* Occupa il doppio dello spazio rispetto alla colonna dei titoli */
+}
+
+.project-description p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-top: 0;
+    margin-bottom: 20px; /* Spazio tra i vari paragrafi */
+}
+
+/* Immagini incolonnate sotto al testo */
+.project-images-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra le immagini orizzontalmente */
+    gap: 100px; /* Spazio verticale tra una tavola e l'altra */
+}
+
+.project-images-column img {
+    width: 50%; /* Rimpicciolisce le immagini (prova anche 60% o 80% per trovare la misura perfetta) */
+    max-width: 800px; /* Evita che diventino comunque troppo grandi su schermi giganti */
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
+
+/* --- STILE GRIGLIA FOTOGRAFICA (PHOTOGRAPHY) --- */
+
+.photo-gallery-grid {
+    display: grid;
+    /* Crea 2 colonne perfettamente uguali */
+    grid-template-columns: repeat(2, 1fr); 
+    /* Spazio tra le foto (puoi aumentarlo a 30px se le vuoi più distanti) */
+    gap: 20px; 
+    width: 100%;
+    margin-top: 40px;
+}
+
+.photo-gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Taglia le foto in modo che riempiano bene lo spazio senza deformarsi */
+    border-radius: 10px; /* Angoli leggermente stondati */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* --- STILE COLONNA IMMAGINI (Sloppy Studio e Photography) --- */
+.project-images-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 50px; /* Spazio verticale tra i blocchi */
+    margin-top: 40px;
+}
+
+/* Immagini singole (grandi) */
+.project-images-column > img {
+    width: 50%; /* Larghezza colonna */
+    max-width: 600px; 
+    height: auto; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
+
+/* Contenitore per le foto affiancate */
+.image-row {
+    display: flex;
+    gap: 30px; /* Spazio orizzontale tra le due foto piccole */
+    width: 70%; /* Deve avere la stessa larghezza delle foto singole */
+    max-width: 800px;
+}
+
+/* Le due foto all'interno del contenitore */
+.image-row img {
+    width: calc(50% - 15px); /* Divide lo spazio a metà togliendo il gap */
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* --- STILE DEFINIZIONI DIZIONARIO (THE SHAPE OF TIME) --- */
+
+.dictionary-entry {
+    margin-bottom: 30px; /* Spazio tra una parola e l'altra */
+}
+
+.dictionary-entry .word {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+}
+
+.dictionary-entry .phonetic {
+    font-size: 1.1rem;
+    color: #888888;
+    font-style: italic; /* Mette la pronuncia in corsivo */
+    font-family: serif; /* Un font graziato rende l'effetto dizionario molto realistico */
+    margin: 2px 0 8px 0;
+}
+
+.dictionary-entry .definition {
+    font-size: 1.15rem;
+    color: #333333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- STILE LIBRO APERTO (HOUSING STUDIO) --- */
+
+.open-book-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* Spazio tra una doppia pagina e l'altra mentre scorri giù */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Il contenitore realistico del libro */
+.book-spread {
+    position: relative; 
+    display: flex;
+    width: 90%; 
+    max-width: 1400px; 
+    background: #ffffff;
+    
+    /* Ombre stratificate iper-realistiche: una netta per lo spessore, una diffusa per l'ambiente */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 15px 40px rgba(0,0,0,0.06); 
+    border-radius: 1px; /* La carta vera ha gli angoli vivi, non troppo arrotondati */
+}
+
+/* Le singole pagine */
+.book-spread img {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+/* La rilegatura: Riga sottilissima centrale con ombra per la profondità */
+.book-crease {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    
+    /* La riga fisica: larga appena 2 pixel */
+    width: 2px; 
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.08); /* Colore della riga centrale (grigio molto tenue) */
+    
+    /* L'ombra che si espande a destra e a sinistra simulando la curva della carta */
+    box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.06);
+    
+    pointer-events: none;
+}
+
+/* --- TASTO TORNA INDIETRO --- */
+.back-button-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    color: #888888;
+    font-size: 1rem;
+    font-family: sans-serif;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #000000;
+}
+
+/* --- LAYOUT RÉSUMÉ / CV (VERSIONE MIGLIORATA) --- */
+.resume-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 150px; 
+    max-width: 1100px; 
+    margin: 80px auto; 
+    padding: 0 20px;
+    /* La riga del font-family è stata eliminata, così usa il font globale del sito! */
+    color: #333333; 
+    line-height: 1.6; 
+}
+
+.cv-section {
+    margin-bottom: 60px; /* Più respiro tra i vari blocchi (es. Education e Experience) */
+}
+
+.cv-section h2 {
+    font-size: 2rem; /* Titolo più grande */
+    font-weight: bold;
+    color: #000000; /* Nero puro per dare importanza */
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea; /* Linea divisoria elegantissima */
+}
+
+/* Stili Colonna Sinistra */
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Più spazio tra una skill e l'altra */
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 1.05rem; /* Testo base ingrandito */
+}
+
+.skill-item .dots {
+    letter-spacing: 3px; /* Distanzia i pallini */
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.skill-item .text-level {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #666666;
+}
+
+.simple-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.simple-list li {
+    font-size: 1.05rem; /* Testo base ingrandito */
+    margin-bottom: 10px;
+}
+
+/* Stili Colonna Destra */
+.experience-item {
+    margin-bottom: 40px; /* Più respiro tra le singole esperienze */
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+
+.experience-title {
+    font-size: 1.15rem; /* Titolo esperienza più grande */
+    font-weight: normal;
+    color: #000000;
+    margin: 0;
+    max-width: 75%; 
+    line-height: 1.4;
+}
+
+.experience-title strong {
+    font-style: italic; 
+    font-weight: bold;
+}
+
+.experience-date {
+    font-size: 1rem; /* Data ingrandita */
+    text-align: right;
+    white-space: nowrap; 
+    color: #666666; /* Grigio per non rubare la scena al titolo */
+}
+
+.experience-subtitle {
+    margin: 0 0 12px 0;
+    font-size: 1.05rem;
+    color: #555555;
+}
+
+.experience-details {
+    list-style: none;
+    padding-left: 20px; /* Rientro più compatto e pulito */
+    margin: 10px 0 0 0;
+}
+
+.experience-details li {
+    font-size: 1.05rem; /* Testo descrittivo ingrandito */
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Adattamento per i telefoni */
+@media (max-width: 768px) {
+    .resume-container {
+        grid-template-columns: 1fr; 
+        gap: 50px;
+    }
+    
+    .experience-header {
+        flex-direction: column; 
+        gap: 5px;
+    }
+    
+    .experience-title {
+        max-width: 100%;
+    }
+    
+    .experience-date {
+        text-align: left;
+        color: #888888;
+    }
+}
+
+/* --- SCORRIMENTO FLUIDO --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- TASTO BACK TO TOP --- */
+.back-to-top-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    border-top: 1px solid #eaeaea;
+}
+
+.back-to-top {
+    display: inline-block;
+    text-decoration: none;
+    color: #888888;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.back-to-top:hover {
+    color: #000000;
+}
+
+
+/* --- LAYOUT PANNELLI A1 (SPID STUDIO) --- */
+
+/* 1. Il Trittico in alto */
+.a1-overview {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Gestione dei link cliccabili */
+.overview-link {
+    width: 33.333%; 
+    display: block;
+    transition: transform 0.3s ease; /* Prepara l'animazione */
+}
+
+.overview-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+/* Quando passi il mouse sopra al pannellino, si solleva un po'! */
+.overview-link:hover {
+    transform: translateY(-8px); 
+    cursor: pointer; /* Fa apparire la manina */
+}
+
+/* La riga separatrice */
+.section-divider {
+    border: none;
+    border-top: 1px solid #eaeaea;
+    width: 60px; 
+    margin: 80px auto;
+}
+
+/* 2. I Pannelli da lettura (I Bersagli) */
+.a1-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 120px; 
+    margin: 0 auto 80px auto;
+    max-width: 1400px; 
+    padding: 0 20px;
+}
+
+.a1-details img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    scroll-margin-top: 60px; /* IMPORTANTISSIMO: Quando scivola giù, lascia un po' di spazio dal bordo superiore dello schermo per non tagliare il disegno */
+}
+
+/* Adattamento Telefono */
+@media (max-width: 768px) {
+    .a1-overview {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .overview-link {
+        width: 100%; 
+    }
+    .section-divider, .a1-details {
+        display: none; 
+    }
+}
+
+
+
+/* --- LAYOUT LIBRO (PAGINE QUADRATE) --- */
+.book-spread {
+    position: relative; 
+    display: flex;
+    width: 90%; 
+    max-width: 1200px; /* Larghezza ideale per schermi grandi */
+    margin: 60px auto; /* Spazio tra una doppia pagina e l'altra */
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 15px 40px rgba(0,0,0,0.06); 
+}
+
+.book-spread img {
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+.book-crease {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px; 
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.06);
+    pointer-events: none;
+}
+
+/* --- TASTO DOWNLOAD PDF --- */
+.download-container {
+    text-align: center;
+    margin: 60px auto 100px auto;
+}
+
+.download-title {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border: 1px solid #000000; /* Bordo nero elegante */
+    background-color: transparent;
+    color: #000000;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease; /* Effetto morbido */
+}
+
+/* Quando passi il mouse, il tasto si riempie di nero */
+.download-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Adattamento Telefono per il libro */
+@media (max-width: 768px) {
+    .book-spread {
+        flex-direction: column;
+    }
+    .book-spread img {
+        width: 100%;
+    }
+    .book-crease {
+        /* Sul telefono mettiamo la linea orizzontale tra le due pagine invece che verticale */
+        left: 0; right: 0; top: 50%; bottom: auto;
+        width: 100%; height: 2px;
+        transform: translateY(-50%);
+    }
+}
+
+/* --- COPERTINA LIBRO (PAGINA SINGOLA) --- */
+.book-cover {
+    width: 45%; /* Metà della larghezza del libro aperto */
+    max-width: 600px; /* Metà dei 1200px massimi del libro aperto */
+    margin: 60px auto 80px auto; /* Centrato con molto spazio sotto prima di aprire il libro */
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 15px 40px rgba(0,0,0,0.06); 
+}
+
+.book-cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1; /* La forza a rimanere un quadrato perfetto */
+    object-fit: cover;
+}
+
+/* Adattamento telefono per la copertina */
+@media (max-width: 768px) {
+    .book-cover {
+        width: 90%; /* Sul telefono prende tutto lo spazio come le altre */
+    }
+}
+
+
+/* --- PAGINA PUBLICATIONS --- */
+.publications-page {
+    width: 80%;
+    max-width: 1200px;
+    margin: 60px auto 100px auto;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #000000;
+}
+
+/* La scheda orizzontale */
+.publication-card {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    background: #fafafa; /* Un grigio quasi invisibile per staccarla dal fondo */
+    padding: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.publication-card:hover {
+    transform: translateY(-5px); /* Si solleva leggermente */
+}
+
+.pub-image {
+    flex: 1; /* Prende metà spazio */
+}
+
+.pub-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.pub-content {
+    flex: 1; /* Prende l'altra metà */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pub-magazine {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888888;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.pub-title {
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    color: #000000;
+}
+
+.pub-date {
+    font-size: 1rem;
+    font-style: italic;
+    color: #666666;
+    margin: 0 0 25px 0;
+}
+
+.pub-excerpt {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #444444;
+    margin-bottom: 35px;
+    text-align: justify;
+}
+
+/* Il link elegante con la freccetta */
+.pub-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.pub-link:hover {
+    opacity: 0.5;
+}
+
+/* Adattamento per i telefoni */
+@media (max-width: 768px) {
+    .publication-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 40px;
+    }
+}
+
