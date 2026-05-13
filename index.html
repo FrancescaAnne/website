@@ -1,24 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <link rel="stylesheet" href="styleweb.css">
-</head> <body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styleweb.css">
+    <title>Francesca Annè — Architect and Urban Planner</title>
+</head>
+<body>
+
     <header>
-        <a href="sitoweb.html" class="site-title">
+        <a href="#home" class="site-title">
             <h1>Francesca Annè</h1>
             <span class="profession-title">architect and urban planner</span>
         </a>
-        
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
         <nav class="nav-links">
-            <a href="resume.html">Résumé</a>
-            <a href="projects.html">Projects</a>
-            <a href="publications.html">Publications</a> </nav>
-            
+            <a href="#resume">Résumé</a>
+            <a href="#projects">Projects</a>
+            <a href="#publications">Publications</a>
+        </nav>
     </header>
 
-    <main class="mainhome">
-        <div class="frame1">
-            <img class="portrait" src="portrait.png" alt="Francesca Annè Portrait"/>
-            <p>Master&#39;s student in Urban Planning and Policy Design at Politecnico di Milano with a bachelor degree in Architectural Design, passionate about sustainable urban planning and territorial regeneration. Skilled in spatial analysis, Adobe Suite and urban design, focused on environmental resilience. Interested in urban policies, sustainable mobility and participatory planning. Determined to contribute to the development of more efficient, inclusive and sustainable cities.</p>
-        </div>
+    <main>
+
+        <!-- =================== HOME =================== -->
+        <section data-view="home" class="mainhome">
+            <div class="frame1">
+                <img class="portrait" src="assets/img/portrait.png" alt="Francesca Annè Portrait"/>
+                <p>Master&#39;s student in Urban Planning and Policy Design at Politecnico di Milano with a bachelor degree in Architectural Design, passionate about sustainable urban planning and territorial regeneration. Skilled in spatial analysis, Adobe Suite and urban design, focused on environmental resilience. Interested in urban policies, sustainable mobility and participatory planning. Determined to contribute to the development of more efficient, inclusive and sustainable cities.</p>
+            </div>
+        </section>
+
+        <!-- =================== RESUME =================== -->
+        <section data-view="resume" class="resume-container" hidden>
+
+            <div class="resume-left">
+
+                <section class="cv-section">
+                    <h2>Skills</h2>
+                    <div class="skill-list">
+                        <div class="skill-item"><span>- AutoCAD</span></div>
+                        <div class="skill-item"><span>- Rhino 3D</span></div>
+                        <div class="skill-item"><span>- QGIS</span></div>
+                        <div class="skill-item"><span>- Adobe Illustrator</span></div>
+                        <div class="skill-item"><span>- Adobe Photoshop</span></div>
+                        <div class="skill-item"><span>- Adobe Indesign</span></div>
+                        <div class="skill-item"><span>- Microsoft Excel</span></div>
+                    </div>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Soft skills</h2>
+                    <ul class="simple-list">
+                        <li>- Adaptability</li>
+                        <li>- Critical thinking</li>
+                        <li>- Flexibility</li>
+                        <li>- Teamwork</li>
+                        <li>- Responsibility</li>
+                        <li>- Problem solving</li>
+                        <li>- Self-management</li>
+                        <li>- Leadership</li>
+                    </ul>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Languages</h2>
+                    <div class="skill-list">
+                        <div class="skill-item"><span>- Italian</span><span class="text-level">native</span></div>
+                        <div class="skill-item"><span>- English</span><span class="text-level">C1</span></div>
+                    </div>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Hobbies/ interests</h2>
+                    <ul class="simple-list">
+                        <li>- Hiking</li>
+                        <li>- Reading</li>
+                        <li>- Ecology</li>
+                        <li>- Red Cross volunteer (2016 - 2020)</li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <div class="resume-right">
+
+                <section class="cv-section">
+                    <h2>Education</h2>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title"><strong>ASA - Advanced School of Architecture</strong> Honours Program, Politecnico di Milano (Milan, Italy).</h3>
+                            <span class="experience-date">2025 - present</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>- Advanced photography masterclass led by Helene Binet in collaboration with IED institute in Milan.</li>
+                            <li>- Masterclass led by Agostino Nickl focused on integrating artificial intelligence into contemporary architectural practices.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title"><strong>Program Erasmus+</strong> KTH (Stockholm, Sweden).</h3>
+                            <span class="experience-date">january 2025 - june 2025</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>- Strategic Environmental Assessment (SEA) course: Application of the SEA method to write a report on the transport system of a Swedish island.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title"><strong>Master's degree</strong> in Urban Planning and Policy Design, Politecnico di Milano (Milan, Italy).</h3>
+                            <span class="experience-date">2024 - present</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>- Spatial planning and infrastructure design studio: territorial implementation project along a railway.</li>
+                            <li>- Housing and neighbourhood studio: addressing issues regarding contemporary housing policies and neighbourhood regeneration projects.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title"><strong>Bachelor's degree</strong> in Architectural Design. Politecnico di Milano (Milan, Italy).</h3>
+                            <span class="experience-date">2021 - 2024</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cv-section" style="margin-top: 50px;">
+                    <h2>Professional experience</h2>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title"><strong>Intern urban planner</strong> at One Works Spa (Milan, IT).</h3>
+                            <span class="experience-date">april 2026 - present</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>- Research study and thesis on the project "The Borders of Milan".</li>
+                            <li>- Mapping with QGIS and data processing.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title"><strong>Intern architect</strong> at Municipality of Correggio (Correggio, IT).</h3>
+                            <span class="experience-date">july 2024 - august 2024</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>- Removal of the cultural heritage restriction on a school building and the municipal cemetery through the Italian Superintendence portal.</li>
+                            <li>- Use of AutoCAD software.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+
+        </section>
+
+        <!-- =================== PROJECTS INDEX =================== -->
+        <section data-view="projects" class="main-projects" hidden>
+            <div class="projects-grid">
+                <a href="#project-sloppy-studio" class="project-card">
+                    <img src="assets/img/progetto1.png" alt="Sloppy Studio">
+                    <h2>Sloppy Studio</h2>
+                </a>
+                <a href="#project-photography" class="project-card">
+                    <img src="assets/img/progetto2.png" alt="Photography">
+                    <h2>Photography</h2>
+                </a>
+                <a href="#project-thesis" class="project-card">
+                    <img src="assets/img/progetto4.jpg" alt="Bachelor's Thesis">
+                    <h2>Bachelor's Thesis</h2>
+                </a>
+                <a href="#project-housing-studio" class="project-card">
+                    <img src="assets/img/progetto3.png" alt="Housing and Neighbourhood Studio">
+                    <h2>Housing and Neighbourhood Studio</h2>
+                </a>
+                <a href="#project-alta" class="project-card">
+                    <img src="assets/img/progetto6.png" alt="Biophilic Fläderparken">
+                    <h2>Biophilic Fläderparken</h2>
+                </a>
+                <a href="#project-spid-studio" class="project-card">
+                    <img src="assets/img/progetto5.png" alt="SPID Studio">
+                    <h2>SPID Studio</h2>
+                </a>
+            </div>
+        </section>
+
+        <!-- =================== PUBLICATIONS =================== -->
+        <section data-view="publications" class="publications-page" hidden>
+            <h1 class="page-title">Publications</h1>
+
+            <div class="publication-card">
+                <div class="pub-image">
+                    <img src="assets/img/sloppy-baunetz.png" alt="Sloppy Studio su BauNetz Campus">
+                </div>
+                <div class="pub-content">
+                    <span class="pub-magazine">BauNetz CAMPUS</span>
+                    <h2 class="pub-title">Entwerfen im Rauschen der KI: Das „Sloppy Studio"</h2>
+                    <p class="pub-date">March 18, 2026</p>
+                    <p class="pub-excerpt">Wie Studierende der Politecnico di Milano mit Filmcharaktere, Museumsfragmenten und präzisen Prompts das Generische überwinden – und was das über die Zukunft des Entwerfens verrät.</p>
+                    <a href="https://www.baunetz-campus.de/news/entwerfen-im-rauschen-der-ki-das-sloppy-studio-10265295" target="_blank" rel="noopener" class="pub-link">Read full article &#8599;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== PROJECT: SLOPPY STUDIO =================== -->
+        <section data-view="project-sloppy-studio" class="project-detail" hidden>
+            <div class="back-button-container">
+                <a href="#projects" class="back-button">← Back to Projects</a>
+            </div>
+            <div class="project-info">
+                <div class="project-headers">
+                    <h1>Sloppy Studio</h1>
+                    <p class="subtitle">ASA Program masterclass, Politecnico di Milano, 2026</p>
+                </div>
+                <div class="project-description">
+                    <p>The "Sloppy Studio" focuses on architectural design methods in the age of artificial intelligence. The project relies on a conceptual scaffold: designing for a specific character, drawing from a specific collection and intervening in a specific place.</p>
+                    <p>The project is located in a 1950s building opposite the Pinacoteca di Brera, on the former site of the Palazzo di Pio IV de' Medici, which is projected to reopen as a luxury hotel. We were challenged to reimagine typologies like rooms, suites and spas by drawing inspiration directly from the Pinacoteca. Its collection acted as a literal dataset of styles, textures, and atmospheres, allowing us to develop a "conscious bias" and prompt the model away from the generic.</p>
+                    <p>Driven by the image generation model of Gemini, Nano Banana, we designed a room embodying Special Agent Dale Cooper from <em>Twin Peaks</em>. The challenge lay in abstracting his rigorous yet surreal psychology into pure architectural vocabulary, including lighting, proportions and materials. By merging these spatial parameters with the classical textures of the Pinacoteca, we guided the AI to generate a space that implicitly captures his essence.</p>
+                </div>
+            </div>
+            <div class="project-images-column">
+                <img src="assets/img/progetto1.png" alt="Vista generale dell'edificio">
+                <img src="assets/img/G7_3.png" alt="Planimetria piano terra">
+                <img src="assets/img/G7_5.png" alt="Dettaglio interior design hotel">
+                <img src="assets/img/G7_2.png" alt="Dettaglio interior design hotel">
+                <img src="assets/img/G7_4.png" alt="Dettaglio interior design hotel">
+            </div>
+            <div class="back-to-top-container">
+                <a href="#" class="back-to-top">&uarr; Back to Top</a>
+            </div>
+        </section>
+
+        <!-- =================== PROJECT: PHOTOGRAPHY =================== -->
+        <section data-view="project-photography" class="project-detail" hidden>
+            <div class="back-button-container">
+                <a href="#projects" class="back-button">← Back to Projects</a>
+            </div>
+            <div class="project-info">
+                <div class="project-headers">
+                    <h1>Photography</h1>
+                    <p class="subtitle">ASA Program masterclass, Politecnico di Milano, 2025</p>
+                </div>
+                <div class="project-description">
+                    <p>The project, titled "The shape of time", explores the theme of <em>traces</em>. This concept actively guided our photographic eye, pushing us to capture the physical marks of passing time, ephemeral urban transitions and the silent residues of human presence. During the masterclass, we experimented with a hybrid approach to photography: some images were captured using a traditional large format camera and later developed in a darkroom, while others were taken with a digital camera. This visual research unfolded across various significant locations in Milan, with a particular focus on the spaces of Fondazione Prada and Ex Macello.</p>
+                    <div class="dictionary-entry">
+                        <p class="word">Ephemeral</p>
+                        <p class="phonetic">/ɪˈfemərəl/</p>
+                        <p class="definition">lasting or used for only a short period of time</p>
+                    </div>
+                    <div class="dictionary-entry">
+                        <p class="word">Time</p>
+                        <p class="phonetic">/taɪm/</p>
+                        <p class="definition">a period of time, either long or short, during which something happens</p>
+                    </div>
+                    <div class="dictionary-entry">
+                        <p class="word">Transition</p>
+                        <p class="phonetic">/trænˈzɪʃn/</p>
+                        <p class="definition">the process or a period of changing from one state or condition to another</p>
+                    </div>
+                </div>
+            </div>
+            <div class="project-images-column">
+                <img src="assets/img/scan5.jpg" alt="Photography">
+                <div class="image-row">
+                    <img src="assets/img/9.JPG" alt="Photography">
+                    <img src="assets/img/10.JPG" alt="Photography">
+                </div>
+                <img src="assets/img/scan3.jpg" alt="Photography">
+                <img src="assets/img/3.JPG" alt="Photography">
+                <div class="image-row">
+                    <img src="assets/img/1.JPG" alt="Photography">
+                    <img src="assets/img/2.JPG" alt="Photography">
+                </div>
+                <img src="assets/img/8.JPG" alt="Photography">
+                <img src="assets/img/scan1.jpg" alt="Photography">
+                <div class="image-row">
+                    <img src="assets/img/4.JPG" alt="Photography">
+                    <img src="assets/img/5.JPG" alt="Photography">
+                </div>
+                <img src="assets/img/11.JPG" alt="Photography">
+                <div class="image-row">
+                    <img src="assets/img/6.JPG" alt="Photography">
+                    <img src="assets/img/7.JPG" alt="Photography">
+                </div>
+            </div>
+            <div class="back-to-top-container">
+                <a href="#" class="back-to-top">&uarr; Back to Top</a>
+            </div>
+        </section>
+
+        <!-- =================== PROJECT: THESIS =================== -->
+        <section data-view="project-thesis" class="project-detail" hidden>
+            <div class="back-button-container">
+                <a href="#projects" class="back-button">← Back to Projects</a>
+            </div>
+            <div class="project-info">
+                <div class="project-headers">
+                    <h1>The Unité d'Habitation and the collective dimension</h1>
+                    <p class="subtitle">Bachelor's thesis, Politecnico di Milano, 2024</p>
+                </div>
+                <div class="project-description">
+                    <p>This thesis, titled "The Unité d'Habitation and the collective dimension: The key role of toit-terrasse", examines Le Corbusier's revolutionary architectural proposal that redefined the concept of modern urban living. It explores the "vertical city" envisioned as a "machine for living", a self-sufficient microcosm integrating housing, commercial facilities and community services within a single structure.</p>
+                    <p>Central to this study is the innovative role of the <em>toit-terrasse</em> (roof terrace), conceived not merely as a technical element but as a suspended public square, an urban oasis in the sky, designed to foster social interaction and physical well-being. The analysis delves into key architectural principles including the use of pilotis to liberate the ground level, the duplex configuration of apartments to optimize space and the application of the Modulor proportional system based on human measurements. By examining the five realized Unités d'Habitation in Marseille, Nantes-Rezé, Berlin, Briey-en-Forêt and Firminy-Vert, the thesis evaluates how these "concrete sculptures" balanced rational order with the complexities of collective life.</p>
+                    <p>A significant contribution of this research is the inclusion and study of original drawings and archival documentation obtained directly from the Fondation Le Corbusier, which provided a unique and rigorous basis for analyzing the sculptural and functional dimensions of the project.</p>
+                </div>
+            </div>
+
+            <div class="book-cover">
+                <img src="assets/img/tesi1.jpg" alt="Copertina Tesi">
+            </div>
+
+            <div class="book-spread">
+                <img src="assets/img/tesi2.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi3.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi4.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi5.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi6.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi7.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi8.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi9.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi10.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi11.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi12.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi13.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi14.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi15.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi16.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi17.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi18.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi19.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+            <div class="book-spread">
+                <img src="assets/img/tesi20.jpg" alt="Pagina Sinistra">
+                <img src="assets/img/tesi21.jpg" alt="Pagina Destra">
+                <div class="book-crease"></div>
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="download-container">
+                <h3 class="download-title">Want to read more?</h3>
+                <a href="assets/docs/impaginazione tesi inglese.pdf" download="Francesca_Anne_Thesis.pdf" class="download-btn">
+                    &darr; Download full Thesis (PDF)
+                </a>
+            </div>
+
+            <div class="back-to-top-container">
+                <a href="#" class="back-to-top">&uarr; Back to Top</a>
+            </div>
+        </section>
+
+        <!-- =================== PROJECT: HOUSING STUDIO =================== -->
+        <section data-view="project-housing-studio" class="project-detail" hidden>
+            <div class="back-button-container">
+                <a href="#projects" class="back-button">← Back to Projects</a>
+            </div>
+            <div class="project-info">
+                <div class="project-headers">
+                    <h1>Housing and Neighbourhood Studio</h1>
+                    <p class="subtitle">Group project, Politecnico di Milano, 2025 - 2026</p>
+                </div>
+                <div class="project-description">
+                    <p>Developed within the context of the Housing and Neighbourhood Studio, this project tackles the critical issue of homelessness in the city of Milan. As a provocative and conceptual starting point, the research began with a comprehensive mapping of all the bridges across the urban fabric, recognizing them as both physical and symbolic shelters for the unhoused.</p>
+                    <p>This spatial investigation was strictly tied to an in-depth analysis of current Italian and European housing policies. Building upon these urban, political and social insights, the final architectural proposal draws inspiration from successful international case studies, aiming to provide a critical and tangible response to the contemporary housing crisis.</p>
+                </div>
+            </div>
+
+            <div class="open-book-gallery">
+                <div class="book-spread" style="width: 47.5%; max-width: 800px;">
+                    <img src="assets/img/copertina.jpg" alt="Copertina" style="width: 100%;">
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag1.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag2.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag3.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag4.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag5.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag6.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag7.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag8.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag9.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag10.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag11.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag12.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag13.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag14.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag15.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag16.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag17.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag18.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag19.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag20.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/pag21.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/pag22.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="back-to-top-container">
+                    <a href="#" class="back-to-top">&uarr; Back to Top</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== PROJECT: ALTA / BIOPHILIC FLÄDERPARKEN =================== -->
+        <section data-view="project-alta" class="project-detail" hidden>
+            <div class="back-button-container">
+                <a href="#projects" class="back-button">← Back to Projects</a>
+            </div>
+            <div class="project-info">
+                <div class="project-headers">
+                    <h1>Biophilic Fläderparken</h1>
+                    <p class="subtitle">Group project, KTH, 2025</p>
+                </div>
+                <div class="project-description">
+                    <p>Developed within the context of the Urban Development and City Planning course, this project originated from a strategic territorial analysis of Nacka Municipality, specifically focusing on the suburban area of Älta, situated approximately 10 kilometers from central Stockholm. This project proposes a biophilic transformation of Fläderparken in Älta, acting as a green gradient between the urban center and the natural landscapes of Ältasjön.</p>
+                    <p>Grounded in the pillars of resilience, community and connectivity, the plan utilizes "Sponge City" strategies, such as rain gardens and bioswales, to manage stormwater and protect local biodiversity. To enhance liveability, the design introduces natural soundproof hills and vegetation barriers to mitigate noise from the nearby highway. The social fabric is revitalized through community gardens and a preschool dedicated to outdoor pedagogy, ensuring that nature is woven into daily education and interaction. Furthermore, the project redefines local mobility by turning Flädervägen into a curbless "living street" that prioritizes pedestrians and cyclists over cars. Finally, the plan integrates 200 to 250 new housing units featuring green roofs and "mountain-dwelling" terraces to ensure sustainable growth without sacrificing the area's essential green character.</p>
+                </div>
+            </div>
+
+            <div class="open-book-gallery">
+                <div class="book-spread" style="width: 47.5%; max-width: 800px;">
+                    <img src="assets/img/alta1.jpg" alt="Copertina" style="width: 100%;">
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta2.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta3.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta4.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta5.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta6.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta7.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta8.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta9.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta10.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta11.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta12.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta13.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta14.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta15.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta16.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta17.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta18.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta19.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta20.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta21.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta22.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta23.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta24.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta25.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta26.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta27.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta28.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta29.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta30.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta31.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta32.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta33.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta34.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta35.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta36.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta37.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta38.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta39.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta40.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta41.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="book-spread">
+                    <img src="assets/img/alta42.jpg" alt="Pagina sinistra" class="page-left">
+                    <img src="assets/img/alta43.jpg" alt="Pagina destra" class="page-right">
+                    <div class="book-crease"></div>
+                </div>
+                <div class="back-to-top-container">
+                    <a href="#" class="back-to-top">&uarr; Back to Top</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================== PROJECT: SPID STUDIO =================== -->
+        <section data-view="project-spid-studio" class="project-detail" hidden>
+            <div class="back-button-container">
+                <a href="#projects" class="back-button">← Back to Projects</a>
+            </div>
+            <div class="project-info">
+                <div class="project-headers">
+                    <h1>Spatial Planning and Infrastructure Design Studio</h1>
+                    <p class="subtitle">Group project, Politecnico di Milano, 2024 - 2025</p>
+                </div>
+                <div class="project-description">
+                    <p>The genesis of this project lies in a comprehensive territorial analysis of the Milanese suburban rail network, specifically focusing on the final five stations of the S9 line. Following this macro-scale evaluation, the research shifted its focus to a singular, strategic site: the station of Trezzano sul Naviglio. This location was selected as a primary case study to demonstrate how a localized architectural intervention can mend a fragmented urban fabric.</p>
+                    <p>For decades, the train tracks acted as a physical barrier, effectively bisecting the city and isolating its neighborhoods. In this project, these same tracks become the structural foundation for a new inhabited bridge that links the disparate parts of the urban environment.</p>
+                    <p>By building directly above the railway, the project unlocks the potential for a vertical green connection. Utilizing the principles of the Sponge City, the design incorporates permeable surfaces and innovative water management systems, transforming the transit corridor into an ecological filter that mitigates the heat island effect and manages rainwater. This intervention enables the seamless integration of commercial spaces and public services around the bridge, creating a dynamic mixed-use hub.</p>
+                </div>
+            </div>
+
+            <div class="a1-overview">
+                <a href="#spid-dettaglio-1" class="overview-link">
+                    <img src="assets/img/panel1.jpg" alt="Pannello 1 - Composizione">
+                </a>
+                <a href="#spid-dettaglio-2" class="overview-link">
+                    <img src="assets/img/panel2.jpg" alt="Pannello 2 - Composizione">
+                </a>
+                <a href="#spid-dettaglio-3" class="overview-link">
+                    <img src="assets/img/panel3.jpg" alt="Pannello 3 - Composizione">
+                </a>
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="a1-details">
+                <img id="spid-dettaglio-1" src="assets/img/panel1.jpg" alt="Pannello 1 - Lettura">
+                <img id="spid-dettaglio-2" src="assets/img/panel2.jpg" alt="Pannello 2 - Lettura">
+                <img id="spid-dettaglio-3" src="assets/img/panel3.jpg" alt="Pannello 3 - Lettura">
+            </div>
+
+            <div class="back-to-top-container">
+                <a href="#" class="back-to-top">&uarr; Back to Top</a>
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -29,3 +644,49 @@
         </p>
         <p align="center">&copy; Francesca Ann&egrave; 2026</p>
     </footer>
+
+    <script>
+        (function () {
+            const VIEWS = [
+                'home', 'resume', 'projects', 'publications',
+                'project-sloppy-studio', 'project-photography', 'project-thesis',
+                'project-housing-studio', 'project-alta', 'project-spid-studio'
+            ];
+            const sections = document.querySelectorAll('section[data-view]');
+
+            function showView(scrollTop) {
+                const raw = location.hash.slice(1);
+                if (raw !== '' && !VIEWS.includes(raw)) return; // in-page anchor: let browser handle
+                const target = raw || 'home';
+                sections.forEach(s => { s.hidden = s.dataset.view !== target; });
+                if (scrollTop) window.scrollTo(0, 0);
+            }
+
+            window.addEventListener('hashchange', () => showView(true));
+            document.addEventListener('DOMContentLoaded', () => showView(false));
+
+            // Back-to-top buttons must NOT switch view via empty hash
+            document.addEventListener('click', (e) => {
+                const a = e.target.closest('a.back-to-top');
+                if (!a) return;
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Hamburger menu
+            const toggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav-links');
+            toggle?.addEventListener('click', () => {
+                const open = nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            nav?.querySelectorAll('a').forEach(a =>
+                a.addEventListener('click', () => {
+                    nav.classList.remove('open');
+                    toggle?.setAttribute('aria-expanded', 'false');
+                })
+            );
+        })();
+    </script>
+</body>
+</html>

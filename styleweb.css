@@ -860,3 +860,231 @@ html {
     }
 }
 
+
+/* =================================================================
+   SINGLE-PAGE ROUTER + MOBILE RESPONSIVE
+   ================================================================= */
+
+/* Force-hide views (overrides flex/grid display rules on sections) */
+[hidden] {
+    display: none !important;
+}
+
+/* Site title block (logo + tagline stack) */
+.site-title {
+    display: inline-block;
+    line-height: 1;
+}
+.profession-title {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 6px;
+}
+
+/* Hamburger toggle button (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    width: 38px;
+    height: 32px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+}
+
+/* Tablet: projects grid drops to 2 columns */
+@media (max-width: 900px) and (min-width: 769px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    .mainhome {
+        width: 90%;
+        margin: 50px auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 14px 18px;
+        align-items: center;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    .profession-title {
+        font-size: 0.8rem;
+        margin-top: 3px;
+    }
+    header a {
+        font-size: 1rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 18px 16px;
+        background-color: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        display: none;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid #eaeaea;
+        font-size: 1.1rem;
+    }
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* Home */
+    .mainhome {
+        width: 90%;
+        margin: 30px auto 50px;
+    }
+    .frame1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin: 0;
+    }
+    .portrait {
+        width: 180px;
+        height: 180px;
+    }
+    .frame1 p {
+        font-size: 1rem;
+        line-height: 1.65;
+        text-align: left;
+    }
+
+    /* Projects grid */
+    .main-projects {
+        padding: 30px 5%;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .project-card h2 {
+        font-size: 1.4rem;
+        top: 18px;
+    }
+
+    /* Project detail */
+    .project-detail {
+        width: 90%;
+        margin: 30px auto;
+    }
+    .project-info {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+    .project-headers h1 {
+        font-size: 2rem;
+    }
+    .project-headers .subtitle {
+        font-size: 1rem;
+    }
+    .project-description p {
+        font-size: 1rem;
+        line-height: 1.65;
+        text-align: left;
+    }
+    .project-images-column {
+        gap: 36px;
+        margin-top: 20px;
+    }
+    .project-images-column > img {
+        width: 95%;
+        max-width: none;
+    }
+    .image-row {
+        width: 95%;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .image-row img {
+        width: 100%;
+    }
+
+    /* Book galleries (thesis, housing, biophilic) on mobile:
+       images stack one by one, no book shadow / no page crease */
+    .open-book-gallery {
+        gap: 24px;
+    }
+    .book-spread,
+    .book-spread[style] {
+        width: 95% !important;
+        max-width: none !important;
+        background: transparent;
+        box-shadow: none !important;
+        gap: 24px;
+        margin: 0;
+    }
+    .book-spread img {
+        box-shadow: none;
+    }
+    .book-cover {
+        background: transparent;
+        box-shadow: none;
+        width: 95%;
+        margin: 24px auto;
+    }
+    .book-crease {
+        display: none;
+    }
+
+    /* Publications */
+    .publications-page {
+        width: 90%;
+        margin: 30px auto 60px;
+    }
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .pub-title {
+        font-size: 1.5rem;
+    }
+    .pub-excerpt {
+        font-size: 1rem;
+        line-height: 1.55;
+        text-align: left;
+    }
+
+    /* Footer */
+    footer {
+        padding: 24px 18px;
+        font-size: 0.95rem;
+    }
+
+    /* Dictionary entries (photography) */
+    .dictionary-entry .word { font-size: 1.2rem; }
+    .dictionary-entry .definition { font-size: 1rem; }
+}
+
